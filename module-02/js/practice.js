@@ -256,7 +256,7 @@
 
 // input = prompt(`Угадайте цифру от ${min} до ${max}`);
 
-// if (Number(input) % 1 === 0 && !Number.isNaN(input)) {
+// if (Number(input) % 1 === 0 && !Number.isNaN(Number(input))) можно без второй проверки {
 //   if (numbers.includes(Number(input))) {
 //     alert('Поздравляем, Вы угадали!');
 //   } else {
