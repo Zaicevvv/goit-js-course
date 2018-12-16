@@ -26,13 +26,14 @@ do {
   userInput = prompt('Введите пароль!');
   attempts -= 1;
   if (!userInput) break;
+  if (attempts === 0) {
+    alert('У вас закончились попытки, аккаунт заблокирован!');
+    break;
+  }
   if (passwords.includes(userInput)) {
     alert('Добро пожаловать!');
     break;
   } else {
     alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
-  }
-  if (attempts === 0) {
-    alert('У вас закончились попытки, аккаунт заблокирован!');
   }
 } while (attempts !== 0);
