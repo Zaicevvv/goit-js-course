@@ -237,12 +237,13 @@
 const removeFromArray = (arr, ...values) => {
   // console.log(arr);
   // console.log(values);
+  let newArr = [];
   for (let i = 0; i < arr.length; i += 1) {
-    if (values.includes(arr[i])) {
-      arr.splice(i, 1);
+    if (!values.includes(arr[i])) {
+      newArr.push(arr[i]);
     }
   }
-  return arr;
+  return newArr;
 };
 
 // Вызовы функции для проверки
