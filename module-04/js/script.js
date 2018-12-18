@@ -15,6 +15,50 @@ const order = {
   cheese: 1,
 };
 
+const cashier = {
+  name: 'Mango',
+  customerMoney: 0,
+  totalPrice: 0,
+  change: 0,
+  error: null,
+  greet() {
+    console.log(`Добрый день, вас обслуживает ${cashier.name}`);
+  },
+  getCustomerMoney(value) {
+    cashier.customerMoney = value;
+  },
+  countTotalPrice(allProducts, order) {
+    let total = 0;
+    for (const productKey in allProducts) {
+      for (const orderKey in order) {
+        if (productKey === orderKey) {
+          total += Number(allProducts[productKey]) * Number(order[orderKey]);
+        }
+      }
+    }
+    cashier.totalPrice = total;
+  },
+  countChange() {
+    if (Number(cashier.customerMoney) >= Number(cashier.totalPrice)) {
+      cashier.change =
+        Number(cashier.customerMoney) - Number(cashier.totalPrice);
+    } else {
+      cashier.error = 'вам не хватает денег на покупки';
+    }
+  },
+  onSuccess() {
+    console.log(`Спасибо за покупку, ваша сдача ${cashier.change}!`);
+  },
+  onError() {
+    console.log(`Очень жаль, ${cashier.error}!`);
+  },
+  reset() {
+    cashier.customerMoney = 0;
+    cashier.totalPrice = 0;
+    cashier.change = 0;
+    cashier.error = null;
+  },
+};
 // Проверяем исходные значения полей
 console.log(cashier.name); // Mango
 console.log(cashier.customerMoney); // 0
