@@ -29,20 +29,16 @@ const cashier = {
   },
   countTotalPrice(allProducts, order) {
     let total = 0;
-    for (const productKey in allProducts) {
-      for (const orderKey in order) {
-        if (productKey === orderKey) {
-          total += Number(allProducts[productKey]) * Number(order[orderKey]);
-        }
+    for (const key in order) {
+      if (allProducts.key === order.key) {
+        total += Number(allProducts[key]) * Number(order[key]);
       }
     }
     cashier.totalPrice = total;
   },
   countChange() {
-    if (Number(cashier.customerMoney) >= Number(cashier.totalPrice)) {
-      cashier.change =
-        Number(cashier.customerMoney) - Number(cashier.totalPrice);
-    } else {
+    cashier.change = Number(cashier.customerMoney) - Number(cashier.totalPrice);
+    if (cashier.change < 0) {
       cashier.error = 'вам не хватает денег на покупки';
     }
   },

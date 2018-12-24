@@ -153,24 +153,23 @@
   из каждого объекта в массиве
 */
 
-// const users = [
-//   { name: 'Poly', age: 7, mood: 'happy' },
-//   { name: 'Mango', age: 4, mood: 'blissful' },
-//   { name: 'Ajax', age: 3, mood: 'tired' },
-// ];
+const users = [
+  { name: 'Poly', age: 7, mood: 'happy' },
+  { name: 'Mango', age: 4, mood: 'blissful' },
+  { name: 'Ajax', age: 3, mood: 'tired' },
+];
 
-// const getAllPropValues = (arr, prop) => {
-//   const propValues = [];
-//   for (const element of arr) {
-//     if (element[prop]) propValues.push(element[prop]);
-//   }
-//   return propValues;
-// };
+const getAllPropValues = (arr, prop) => {
+  const propValues = [];
+  for (const element of arr) {
+    if (element[prop]) propValues.push(element[prop]);
+  }
+  return propValues;
+};
 
-// // Вызовы функции для проверки
-// console.log(getAllPropValues(users, 'name')); // ['Poly', 'Mango', 'Ajax']
+// Вызовы функции для проверки
+console.log(getAllPropValues(users, 'name')); // ['Poly', 'Mango', 'Ajax']
 
-// console.log(getAllPropValues(users, 'mood')); // ['happy', 'blissful', 'tired']
+console.log(getAllPropValues(users, 'mood')); // ['happy', 'blissful', 'tired']
 
-// console.log(getAllPropValues(users, 'active')); // []
-
+console.log(getAllPropValues(users, 'active')); // []
