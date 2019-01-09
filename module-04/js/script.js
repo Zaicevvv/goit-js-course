@@ -22,10 +22,10 @@ const cashier = {
   change: 0,
   error: null,
   greet() {
-    console.log(`Добрый день, вас обслуживает ${cashier.name}`);
+    console.log(`Добрый день, вас обслуживает ${this.name}`);
   },
   getCustomerMoney(value) {
-    cashier.customerMoney = value;
+    this.customerMoney = value;
   },
   countTotalPrice(allProducts, order) {
     let total = 0;
@@ -34,25 +34,25 @@ const cashier = {
         total += Number(allProducts[key]) * Number(order[key]);
       }
     }
-    cashier.totalPrice = total;
+    this.totalPrice = total;
   },
   countChange() {
-    cashier.change = Number(cashier.customerMoney) - Number(cashier.totalPrice);
-    if (cashier.change < 0) {
-      cashier.error = 'вам не хватает денег на покупки';
+    this.change = Number(this.customerMoney) - Number(this.totalPrice);
+    if (this.change < 0) {
+      this.error = 'вам не хватает денег на покупки';
     }
   },
   onSuccess() {
-    console.log(`Спасибо за покупку, ваша сдача ${cashier.change}!`);
+    console.log(`Спасибо за покупку, ваша сдача ${this.change}!`);
   },
   onError() {
-    console.log(`Очень жаль, ${cashier.error}!`);
+    console.log(`Очень жаль, ${this.error}!`);
   },
   reset() {
-    cashier.customerMoney = 0;
-    cashier.totalPrice = 0;
-    cashier.change = 0;
-    cashier.error = null;
+    this.customerMoney = 0;
+    this.totalPrice = 0;
+    this.change = 0;
+    this.error = null;
   },
 };
 // Проверяем исходные значения полей
