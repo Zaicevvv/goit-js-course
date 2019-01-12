@@ -25,7 +25,7 @@ const cashier = {
     console.log(`Добрый день, вас обслуживает ${this.name}`);
   },
   getCustomerMoney(value) {
-    this.customerMoney = value;
+    this.customerMoney = value;   
   },
   countTotalPrice(allProducts, order) {
     let total = 0;
