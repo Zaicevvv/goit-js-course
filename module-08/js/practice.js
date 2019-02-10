@@ -235,22 +235,22 @@
       на 10px
 */
 
-const num = 5;
+// const num = 5;
 
-const rootDiv = document.querySelector('#root');
+// const rootDiv = document.querySelector('#root');
 
-const createBoxes = number => {
-  const boxes = [];
-  let size = '30px';
-};
+// const createBoxes = number => {
+//   const boxes = [];
+//   let size = '30px';
+// };
 
-createBoxes(num);
+// createBoxes(num);
 
-const color = [];
-for (let i = 0; i < 3; i += 1) {
-  const value = Math.floor(Math.random() * 255);
-  color.push(value);
+// const color = [];
+// for (let i = 0; i < 3; i += 1) {
+//   const value = Math.floor(Math.random() * 255);
+//   color.push(value);
 
-  // return color;
-}
-console.log(color[0], ',', color[1], ',', color[2]);
+//   // return color;
+// }
+// console.log(color[0], ',', color[1], ',', color[2]);
