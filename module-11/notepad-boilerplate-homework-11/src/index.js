@@ -85,8 +85,7 @@ const handleListItemBtnClick = ({ target }) => {
 const handleSearchFormInput = ({ target }) => {
   const query = target.value;
   const hasQuery = notepad.filterNotesByQuery(query);
-
-  renderNoteList(refs.noteList, hasQuery);
+  renderNoteList(refs.noteList, hasQuery.map(note => noteMarkup(note)));
 };
 
 const handleModalOpen = () => {
