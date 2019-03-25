@@ -2,23 +2,14 @@ import MicroModal from 'micromodal';
 import Notyf from 'notyf';
 import noteMarkup from './templates/note-markup.hbs';
 import Notepad from './js/utils/notepad-model';
-// import initialNotes from './assets/notes.json';
 import { NOTE_ACTIONS, NOTIFICATION_MESSAGES } from './js/utils/constants';
 import { getRefs, addListItem, renderNoteList } from './js/utils/view';
 import './sass/main.scss';
 import 'notyf/dist/notyf.min.css';
 
 const notyf = new Notyf();
-const notepad = new Notepad(); // (initialNotes)
-// const initialNotesWithStringifyPriority = initialNotes.map(
-//   note => ((note.priority = Notepad.getPriorityName(note.priority)), note),
-// );
+const notepad = new Notepad();
 const refs = getRefs();
-
-// renderNoteList(
-//   refs.noteList,
-//   initialNotesWithStringifyPriority.map(note => noteMarkup(note)),
-// );
 
 notepad
   .loadNotes()

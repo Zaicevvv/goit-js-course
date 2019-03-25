@@ -35,10 +35,7 @@ export default class Notepad {
         const notesToLoad = localStorage.getItem('notes');
         if (!notesToLoad) return;
 
-        JSON.parse(notesToLoad).map(note => {
-          if (this.findNoteById(note.id)) return;
-          this.saveNote(note);
-        });
+        this._notes = JSON.parse(notesToLoad);
 
         resolve(JSON.parse(notesToLoad));
       }, 300),
@@ -49,6 +46,7 @@ export default class Notepad {
       setTimeout(() => {
         this._notes = this._notes.filter(note => note.id !== id);
         localStorage.setItem('notes', JSON.stringify(this._notes));
+        if (this._notes.length === 0) localStorage.removeItem('notes');
 
         resolve(this._notes);
       }, 300),
